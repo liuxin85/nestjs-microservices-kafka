@@ -14,6 +14,18 @@
     },
     {
       "path": "./apps/order-microservice"
+    },
+    {
+      "path": "./apps/payment-microservice-e2e"
+    },
+    {
+      "path": "./apps/payment-microservice"
+    },
+    {
+      "path": "./apps/notification-microservice-e2e"
+    },
+    {
+      "path": "./apps/notification-microservice"
     }
   ]
 }

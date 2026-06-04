@@ -6,8 +6,7 @@ import { ClientKafka, MessagePattern, Payload } from '@nestjs/microservices';
 export class AppController {
   constructor(
     private readonly appService: AppService,
-    @Inject('KAFKA_SERVICE')
-    private readonly kafkaClient: ClientKafka,
+    @Inject('KAFKA_SERVICE') private readonly kafkaClient: ClientKafka,
   ) {}
 
   @Get()
@@ -15,12 +14,10 @@ export class AppController {
     return this.appService.getData();
   }
 
-  @MessagePattern('order-created')
-  handleOrderCreated(@Payload() order: any) {
-    console.log('[Order-Service]: Received new order', order);
+  @MessagePattern('process-payment')
+  processPayment(@Payload() data: any) {
+    console.log('[Payment Service] Payment in process', data);
 
-    // sinmulate processing the order
-
-    this.kafkaClient.emit('process-payment', order);
+    this.kafkaClient.emit('payment-succeed', data);
   }
 }

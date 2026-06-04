@@ -18,14 +18,14 @@ async function bootstrap() {
           brokers: ['localhost:9092'],
         },
         consumer: {
-          groupId: 'order-consumer-group',
+          groupId: 'payment-consumer-group',
         },
       },
     },
   );
   await app.listen();
 
-  Logger.log(`🚀 Application is listening to kafka ...`);
+  Logger.log(`🚀 Payment Microservice is listening to kafka ...`);
 }
 
 bootstrap();

@@ -18,14 +18,13 @@ async function bootstrap() {
           brokers: ['localhost:9092'],
         },
         consumer: {
-          groupId: 'order-consumer-group',
+          groupId: 'notification-consumer-group',
         },
       },
     },
   );
   await app.listen();
-
-  Logger.log(`🚀 Application is listening to kafka ...`);
+  Logger.log(`🚀 notification microservice is listening to kafka...`);
 }
 
 bootstrap();
