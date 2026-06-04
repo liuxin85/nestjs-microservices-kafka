@@ -7,3 +7,6 @@ nx g @nx/nest:app apps/api-gateway
 nx serve api-gateway
 
 npm i @nestjs/microservices kafkajs
+
+
+nx g @nx/nest:app apps/order-microservice
